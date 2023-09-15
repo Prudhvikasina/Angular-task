@@ -1,0 +1,73 @@
+<div class="container">
+  <button class="create-employee mt-4" mat-button (click)="openDialog()">Create employee</button>
+  <input class="input-fliter mt-4" matInput (input)="applyFilter($event)" placeholder="Filter">
+<div class="container mt-5">
+<table mat-table [dataSource]="details"  class="mat-elevation-z8">
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Mobile">
+    <th mat-header-cell *matHeaderCellDef> Mobile </th>
+    <td mat-cell *matCellDef="let element"> {{element.Mobile}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Address">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Address2">
+    <th mat-header-cell *matHeaderCellDef> Address2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.Address2}} </td>
+  </ng-container>
+  <ng-container matColumnDef="TaskId">
+    <th mat-header-cell *matHeaderCellDef> Task-Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.TaskId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="TaskStartDate">
+    <th mat-header-cell *matHeaderCellDef> T-Start-Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.TaskStartDate}} </td>
+  </ng-container>
+  <ng-container matColumnDef="TaskEndDate">
+    <th mat-header-cell *matHeaderCellDef> T-End-Date</th>
+    <td mat-cell *matCellDef="let element"> {{element.TaskEndDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="icon">
+    <th mat-header-cell *matHeaderCellDef> View</th>
+    <td mat-cell *matCellDef="let element"> <button mat-icon-button (click)="openDialog()" >
+      <mat-icon >remove_red_eye</mat-icon>
+      
+    </button> 
+  </td>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit</th>
+    <td mat-cell *matCellDef="let element"> <button mat-icon-button (click)="openDialog()" >
+      <mat-icon >edit</mat-icon>
+      
+    </button> 
+  </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+</div>
+</div>
+
+
+
